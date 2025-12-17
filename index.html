@@ -1,646 +1,1288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Skill Dives</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="Coming soon — India's trusted sports item selling e-commerce site for Table Tennis gear & custom-built bats." />
+  <title>BrandName — Coming Soon</title>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Optional modern font (works online); falls back gracefully -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+  <style>
+    :root{
+      /* Base */
+      --bg-0:#070a14;
+      --bg-1:#0b1220;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.56);
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      /* Cards */
+      --card: rgba(255,255,255,.07);
+      --stroke: rgba(255,255,255,.14);
+      --stroke2: rgba(255,255,255,.10);
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+      /* Accents */
+      --accentA:#7c3aed; /* purple */
+      --accentB:#06b6d4; /* cyan */
+      --accentC:#22c55e; /* green */
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+      /* India touch */
+      --saffron:#ff9933;
+      --indiaGreen:#138808;
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+      /* Layout */
+      --max: 1120px;
+      --r1: 16px;
+      --r2: 22px;
+
+      /* Shadows */
+      --shadow1: 0 18px 55px rgba(0,0,0,.45);
+      --shadow2: 0 10px 30px rgba(0,0,0,.30);
+
+      /* Typography */
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(1100px 700px at 18% -10%, rgba(124,58,237,.28), transparent 60%),
+        radial-gradient(900px 650px at 105% 10%, rgba(6,182,212,.22), transparent 60%),
+        radial-gradient(950px 700px at 35% 120%, rgba(34,197,94,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg-0), var(--bg-1));
+      overflow-x:hidden;
+    }
+
+    /* Subtle Ashoka Chakra watermark pattern (very light, not gaudy) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2796%27%20height%3D%2796%27%20viewBox%3D%270%200%2096%2096%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-opacity%3D%270.08%27%20stroke-width%3D%272%27%3E%3Ccircle%20cx%3D%2748%27%20cy%3D%2748%27%20r%3D%2718%27/%3E%3Ccircle%20cx%3D%2748%27%20cy%3D%2748%27%20r%3D%272%27/%3E%3Cpath%20d%3D%27M48%2030V16%27/%3E%3Cpath%20d%3D%27M48%2080V66%27/%3E%3Cpath%20d%3D%27M30%2048H16%27/%3E%3Cpath%20d%3D%27M80%2048H66%27/%3E%3Cpath%20d%3D%27M35.3%2035.3%2025.4%2025.4%27/%3E%3Cpath%20d%3D%27M60.7%2060.7%2070.6%2070.6%27/%3E%3Cpath%20d%3D%27M60.7%2035.3%2070.6%2025.4%27/%3E%3Cpath%20d%3D%27M35.3%2060.7%2025.4%2070.6%27/%3E%3Cpath%20d%3D%27M41%2028%2038%2015%27/%3E%3Cpath%20d%3D%27M55%2068%2058%2081%27/%3E%3Cpath%20d%3D%27M68%2041%2081%2038%27/%3E%3Cpath%20d%3D%27M28%2055%2015%2058%27/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 160px 160px;
+      background-position: center;
+      opacity: .35;
+      mix-blend-mode: overlay;
+    }
+
+    a{ color: inherit; }
+    .container{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
+
+    /* Accessibility */
+    .skip{
+      position:absolute; left:-9999px; top: 10px;
+      background:#fff; color:#000; padding:10px 12px; border-radius: 10px;
+      z-index: 999;
+    }
+    .skip:focus{ left: 18px; }
+
+    /* Sticky header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 14px 0;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,20,.35);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .headerInner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+
+    /* Subtle tricolor accent ribbon */
+    .tricolorLine{
+      height: 3px;
+      background: linear-gradient(90deg, var(--saffron), rgba(255,255,255,.9), var(--indiaGreen));
+      border-radius: 999px;
+      opacity: .9;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      min-width: 190px;
+    }
+    .logo{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(124,58,237,1), rgba(6,182,212,1));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: var(--shadow2);
+    }
+    .brand strong{ display:block; font-size: 14px; letter-spacing: .2px; line-height: 1.1; }
+    .brand span{ display:block; font-size: 12px; color: var(--muted2); margin-top: 2px; }
+
+    nav{ display:flex; align-items:center; gap: 10px; }
+    .navLinks{
+      display:flex; gap: 10px; align-items:center; flex-wrap: wrap;
+    }
+    .navLinks a{
+      text-decoration:none;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .navLinks a:hover{
+      transform: translateY(-1px);
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    /* Mobile nav */
+    .menuBtn{
+      display:none;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 800;
+      cursor:pointer;
+    }
+    @media (max-width: 820px){
+      .menuBtn{ display:inline-flex; align-items:center; gap: 8px; }
+      .navLinks{ display:none; }
+      .navLinks.open{
+        display:flex;
+        position:absolute;
+        right: 18px;
+        top: 70px;
+        width: min(92vw, 420px);
+        padding: 12px;
+        border-radius: var(--r2);
+        background: rgba(12,18,34,.88);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,.14);
+        box-shadow: var(--shadow1);
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .navLinks.open a{ border-radius: 14px; }
+    }
+
+    /* Page sections */
+    main{ padding: 18px 0 56px; }
+    section{ padding: 56px 0; }
+    .sectionHead{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kicker .pill{
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      letter-spacing: .08em;
+    }
+    h1,h2{ letter-spacing: -0.8px; margin: 0; }
+    h1{
+      font-size: clamp(34px, 4.2vw, 56px);
+      line-height: 1.05;
+    }
+    h2{
+      font-size: clamp(22px, 2.2vw, 30px);
+      line-height: 1.15;
+    }
+    p{ margin: 0; }
+    .lead{
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 68ch;
+    }
+
+    .card{
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius: var(--r2);
+      box-shadow: var(--shadow1);
+      backdrop-filter: blur(14px);
+    }
+
+    /* HERO */
+    .hero{
+      padding: 22px 0 0;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){
+      .heroGrid{ grid-template-columns: 1fr; }
+    }
+    .heroLeft{
+      padding: 26px 24px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .heroLeft::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(850px 220px at 12% 0%, rgba(124,58,237,.18), transparent 60%),
+        radial-gradient(600px 220px at 95% 12%, rgba(6,182,212,.16), transparent 60%);
+      pointer-events:none;
+      z-index:0;
+    }
+    .heroLeft > *{ position:relative; z-index:1; }
+
+    .comingSoonRow{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .comingBadge{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accentC);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.16);
+    }
+
+    .indiaTag{
+      font-size: 13px;
+      color: var(--muted2);
+      font-weight: 700;
+      text-align:right;
+    }
+    .gradText{
+      background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(6,182,212,.92), rgba(124,58,237,.95));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .ctaRow{
+      display:flex; gap: 12px; flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      font-weight: 900;
+      letter-spacing: .2px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      transition: transform .15s ease, filter .15s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(124,58,237,1), rgba(6,182,212,1));
+      color: white;
+      box-shadow: 0 14px 40px rgba(124,58,237,.22);
+    }
+    .btnPrimary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+    .btnGhost{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--text);
+    }
+    .btnGhost:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.20);
+    }
+
+    .heroNote{
+      margin-top: 14px;
+      color: var(--muted2);
+      font-size: 13px;
+      line-height: 1.6;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px 18px;
+    }
+    .heroNote span{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .check{
+      width: 18px; height: 18px; border-radius: 999px;
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Right mini card */
+    .heroRight{
+      padding: 22px 20px;
+      display:flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .miniTitle{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .miniTitle strong{ font-size: 14px; letter-spacing: -.2px; }
+    .tinyPill{
+      font-size: 12px;
+      color: var(--muted2);
+      font-weight: 800;
+      border:1px solid rgba(255,255,255,.12);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      white-space:nowrap;
+    }
+    .miniList{
+      margin: 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .miniList li{
+      display:flex; gap: 10px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .miniList b{ font-size: 13px; display:block; }
+    .miniList span{ font-size: 12.5px; color: var(--muted2); display:block; margin-top: 3px; line-height: 1.35; }
+
+    /* Form */
+    .form{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(255,255,255,.14);
+    }
+    .field{
+      flex: 1 1 220px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+    .field input{
+      width:100%;
+      background: transparent;
+      border:none;
+      outline:none;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .field input::placeholder{ color: rgba(255,255,255,.45); }
+    .formHint{
+      width:100%;
+      color: rgba(255,255,255,.50);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* Grids */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 920px){
+      .grid3{ grid-template-columns: 1fr; }
+    }
+
+    /* Feature cards */
+    .feature{
+      padding: 16px;
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition: transform .16s ease, border-color .16s ease, background .16s ease;
+    }
+    .feature:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.055);
+    }
+    .featureTop{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .iconBox{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .feature h3{
+      margin:0;
+      font-size: 15px;
+      letter-spacing: -.2px;
+    }
+    .feature p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+
+    /* Steps */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 920px){
+      .steps{ grid-template-columns: 1fr; }
+    }
+    .step{
+      padding: 16px;
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .step .num{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(255,255,255,.86);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .step .num::before{
+      content:"";
+      width: 28px; height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--saffron), rgba(255,255,255,.85), var(--indiaGreen));
+      opacity: .9;
+    }
+    .step h3{ margin:0 0 6px; font-size: 15px; letter-spacing: -.2px; }
+    .step p{ margin:0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+
+    /* Two column blocks */
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 920px){
+      .twoCol{ grid-template-columns: 1fr; }
+    }
+    .block{
+      padding: 18px;
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .block h3{ margin:0 0 10px; font-size: 15px; letter-spacing: -.2px; }
+    .bullets{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .bullets li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.035);
+    }
+    .bullets b{ display:block; font-size: 13.5px; }
+    .bullets span{ display:block; margin-top: 2px; color: var(--muted2); font-size: 12.5px; line-height: 1.45; }
+
+    /* Contact list */
+    .contactItem{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.035);
+      margin-top: 10px;
+    }
+    .contactItem a{
+      color: rgba(255,255,255,.94);
+      text-decoration:none;
+      border-bottom: 1px dashed rgba(255,255,255,.24);
+    }
+    .contactItem a:hover{ border-bottom-color: rgba(255,255,255,.45); }
+    .contactItem .meta{
+      color: var(--muted2);
+      font-size: 12.5px;
+      margin-top: 2px;
+      line-height: 1.45;
+    }
+
+    /* Section divider accent */
+    .sectionAccent{
+      width: 92px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--saffron), rgba(255,255,255,.88), var(--indiaGreen));
+      opacity: .9;
+      margin-top: 10px;
+    }
+
+    footer{
+      padding: 24px 0 44px;
+      color: rgba(255,255,255,.55);
+      font-size: 12.5px;
+      text-align:center;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.06);
+    }
+
+    /* Toast */
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(12,18,34,.90);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow1);
+      backdrop-filter: blur(16px);
+      display:none;
+      gap: 12px;
+      align-items:center;
+      max-width: min(540px, calc(100% - 28px));
+      z-index: 60;
+    }
+    .toast.show{ display:flex; animation: pop .18s ease-out; }
+    @keyframes pop{
+      from{ transform: translateX(-50%) translateY(8px); opacity: 0; }
+      to{ transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+    .toast strong{ font-size: 13px; }
+    .toast span{ font-size: 12.5px; color: var(--muted2); display:block; margin-top: 2px; }
+    .toast .x{
+      margin-left:auto;
+      border:none;
+      cursor:pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.85);
+      font-weight: 900;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior: auto !important; }
+      .feature:hover, .btn:hover, .navLinks a:hover { transform:none; }
+      .toast.show{ animation:none; }
+    }
+  </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
+  <header>
+    <div class="container">
+      <div class="tricolorLine" aria-hidden="true"></div>
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="text-primary fw-bold m-0">Skill Dives</h1>
+      <div class="headerInner" style="margin-top:12px;">
+        <!-- BRAND (edit BrandName here) -->
+        <a class="brand" href="#top" aria-label="BrandName Home">
+          <div class="" aria-hidden="true">
+            <!-- simple paddle icon -->
+            
+            <img width="27" height="27" class="img-fluid rounded" src="img/SD_LOGO_Official.png" alt="">
+          </div>
+          <div>
+            <strong>SkillDives</strong>
+            <span>Table Tennis • India</span>
+          </div>
         </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#skill" class="nav-item nav-link">Skills</a>
-                <a href="#service" class="nav-item nav-link">Services</a>
-            </div>
-            <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
-                <h1 class="text-primary fw-bold m-0">Skill Dives</h1>
-            </a>
-            <div class="navbar-nav me-auto py-0">
-                <a href="#project" class="nav-item nav-link">Projects</a>
-                <a href="#team" class="nav-item nav-link">Team</a>
-                <a href="#testimonial" class="nav-item nav-link">Testimonial</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
 
+        <nav aria-label="Primary navigation">
+          <button class="menuBtn" id="menuBtn" type="button" aria-controls="navLinks" aria-expanded="false">
+            <span aria-hidden="true">☰</span> Menu
+          </button>
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-light my-6 mt-0" id="home">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">Shouvik Pradhan</h1>
-                    <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">Web Developer, Front End Developer, Java Developer, Apps Developer</div>
-                    <div class="d-flex align-items-center pt-5">
-                        <a href="doc/Shouvik_Pradhan_resume.pdf" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/watch?v=BCQwMXZ4Cy8" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="img/profile-shouvik.png" alt="">
-                </div>
-            </div>
-        </div>
+          <div class="navLinks" id="navLinks">
+            <a href="#sell">What we’ll sell</a>
+            <a href="#custom">Custom bats</a>
+            <a href="#trust">Why trust us</a>
+            <a href="#partner">Partner</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
     </div>
-    <!-- Header End -->
+  </header>
 
-
-    <!-- Video Modal Start -->
-    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/shorts/CzzKOaK7B44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="heroGrid">
+          <div class="card heroLeft">
+            <div class="comingSoonRow">
+              <div class="comingBadge"><span class="dot" aria-hidden="true"></span> Coming Soon</div>
+              <div class="indiaTag">
+                India’s trusted sports item selling e‑commerce site<br>
+                <span style="color: rgba(255,255,255,.46); font-weight:700;">Made for India’s Table Tennis community</span>
+              </div>
             </div>
+
+            <h1>Your premium <span class="gradText">Table Tennis store</span>, built for you.</h1>
+            <p class="lead" style="margin-top:12px;">
+              We’re launching an e‑commerce site for <b>table tennis items</b> — plus
+              <b>custom-built table tennis bats</b> as per customer request.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn btnPrimary" href="#updates">
+                Get Updates
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h12" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M13 6l6 6-6 6" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a class="btn btnGhost" href="#partner">Partner with Us</a>
+            </div>
+
+            <div class="heroNote" aria-label="Highlights">
+              <span><span class="check" aria-hidden="true">✓</span> Authentic products</span>
+              <span><span class="check" aria-hidden="true">✓</span> Player-first recommendations</span>
+              <span><span class="check" aria-hidden="true">✓</span> Smooth checkout (launch plan)</span>
+              <span><span class="check" aria-hidden="true">✓</span> Pan‑India delivery plan</span>
+            </div>
+          </div>
+
+          <div class="card heroRight" id="updates">
+            <div>
+              <div class="miniTitle">
+                <strong>Get launch updates</strong>
+                <span class="tinyPill">Early access</span>
+              </div>
+
+              <ul class="miniList" aria-label="Launch preview">
+                <li>
+                  <div class="iconBox" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M7 7h10v10H7V7Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                      <path d="M4 4h16v16H4V4Z" stroke="rgba(255,255,255,.45)" stroke-width="1.4"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <b>Table tennis gear</b>
+                    <span>Curated essentials + performance equipment.</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="iconBox" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <b>Custom bat builds</b>
+                    <span>Tell us your style — we’ll suggest a setup.</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="iconBox" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                      <path d="M3 7.5V16.5L12 21l9-4.5V7.5" stroke="rgba(255,255,255,.45)" stroke-width="1.4"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <b>Quality checks</b>
+                    <span>Inspection + safe packaging before dispatch.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- <form class="form" onsubmit="return handleNotify(event)" aria-label="Notify me form">
+              <div class="field" role="group" aria-label="Email input">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4V6Z" stroke="rgba(255,255,255,.75)" stroke-width="1.6"/>
+                  <path d="M4 7l8 6 8-6" stroke="rgba(255,255,255,.75)" stroke-width="1.6"/>
+                </svg>
+                <label for="email" style="position:absolute; left:-9999px;">Email</label>
+                <input id="email" type="email" placeholder="Email address" required />
+              </div>
+              <button class="btn btnPrimary" type="submit">Notify me</button>
+              <div class="formHint">
+                <Form action="https://app.formbricks.com/s/cmjac5f564qmrad011ma9239u" method="post">
+              </div>
+            </form> -->
+
+            <div style="position: relative; height:27dvh; overflow:auto;"> 
+  <iframe 
+    src="https://app.formbricks.com/s/cmjac5f564qmrad011ma9239u?embed=true" 
+    frameborder="0" style="position: absolute; left:0; top:0; width:100%; height:100%; border:0;">
+  </iframe>
+</div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE'LL SELL -->
+    <section id="sell">
+      <div class="container">
+        <div class="sectionHead">
+          <div class="kicker"><span class="pill">Catalogue</span> what we’ll sell</div>
+          <h2>Everything you need for table tennis — minus the confusion.</h2>
+          <p class="lead">Simple categories, clear choices, and a player-first shopping experience.</p>
+          <div class="sectionAccent" aria-hidden="true"></div>
+        </div>
+
+        <div class="grid3">
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 3h10v18H7V3Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                  <path d="M7 8h10" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>Blades & Rubbers</h3>
+            </div>
+            <p>Build your feel: speed, spin, control—balanced for your level.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                  <path d="M12 8v4l3 2" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Balls & Accessories</h3>
+            </div>
+            <p>Balls, nets, cleaners, grips, cases, edge tape, and more.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7H4v10h16V7Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                  <path d="M8 7V5h8v2" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>Shoes & Apparel</h3>
+            </div>
+            <p>Comfort, grip, and movement—gear that supports your game.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 12h16" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M6 7h12" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M6 17h12" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Ready-made Bats</h3>
+            </div>
+            <p>Great starting points for beginners and intermediate players.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>Tables (Select)</h3>
+            </div>
+            <p>Selected options (as available) for clubs, schools, and homes.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>Bulk Orders</h3>
+            </div>
+            <p>Academies, schools, clubs, and tournaments—easy procurement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOM BUILT BATS -->
+    <section id="custom">
+      <div class="container">
+        <div class="sectionHead">
+          <div class="kicker"><span class="pill">Custom</span> built as per request</div>
+          <h2>Custom-built table tennis bats — matched to your style.</h2>
+          <p class="lead">Tell us your preferences. We recommend components and assemble a clean, match-ready setup.</p>
+          <div class="sectionAccent" aria-hidden="true"></div>
+        </div>
+
+        <div class="steps" aria-label="Custom bat steps">
+          <div class="step">
+            <div class="num">Step 01</div>
+            <h3>Your play profile</h3>
+            <p>Level, grip, and budget range.</p>
+          </div>
+          <div class="step">
+            <div class="num">Step 02</div>
+            <h3>Component selection</h3>
+            <p>Blade + rubbers (you choose or we suggest).</p>
+          </div>
+          <div class="step">
+            <div class="num">Step 03</div>
+            <h3>Assembly & finish</h3>
+            <p>Fit, edge tape, grip, and clean finishing.</p>
+          </div>
+          <div class="step">
+            <div class="num">Step 04</div>
+            <h3>Quality check</h3>
+            <p>Inspection, packaging, and dispatch plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY TRUST -->
+    <section id="trust">
+      <div class="container">
+        <div class="sectionHead">
+          <div class="kicker"><span class="pill">Trust</span> why India trusts us</div>
+          <h2>Built on authenticity, quality, and service.</h2>
+          <p class="lead">We’re designing the store to be reliable, transparent, and player-first.</p>
+          <div class="sectionAccent" aria-hidden="true"></div>
+        </div>
+
+        <div class="grid3">
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3l8 4v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6" />
+                  <path d="M9 12l2 2 4-5" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Authentic sourcing</h3>
+            </div>
+            <p>We aim for verified sourcing and clear product information.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 6h16v12H4V6Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                  <path d="M7 10h10" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M7 14h7" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Quality checks</h3>
+            </div>
+            <p>Assembly inspection, finishing checks, and safe packaging.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                  <path d="M9.5 12.5 11 14l3.8-4.5" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Secure payments (plan)</h3>
+            </div>
+            <p>Modern checkout experience with secure payment options at launch.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 7h14v10H3V7Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                  <path d="M17 10h3l1 2v5h-4v-7Z" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="rgba(255,255,255,.45)"/>
+                  <path d="M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="rgba(255,255,255,.45)"/>
+                </svg>
+              </div>
+              <h3>Pan‑India delivery plan</h3>
+            </div>
+            <p>Shipping designed for customers across India (service by location).</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 19c2-4 14-4 16 0" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>Player-first support</h3>
+            </div>
+            <p>Recommendations that fit your style and budget—no noise.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 8c0 7 5 12 12 12l2-2-4-4-2 2c-3-1-5-3-6-6l2-2-4-4-2 2Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Fast communication</h3>
+            </div>
+            <p>WhatsApp and email support for custom builds and bulk queries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNER -->
+    <section id="partner">
+      <div class="container">
+        <div class="sectionHead">
+          <div class="kicker"><span class="pill">Partners</span> collaborate with us</div>
+          <h2>Let’s grow table tennis in India — together.</h2>
+          <p class="lead">We welcome partnerships with brands, distributors, academies, coaches, and event organizers.</p>
+          <div class="sectionAccent" aria-hidden="true"></div>
+        </div>
+
+        <div class="grid3">
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7H4v10h16V7Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                  <path d="M8 7V5h8v2" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>Brands & Distributors</h3>
+            </div>
+            <p>List products, expand reach, and sell to a TT-focused audience.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 19c2-4 14-4 16 0" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>Academies & Coaches</h3>
+            </div>
+            <p>Bulk orders, student kits, and special collaboration plans.</p>
+          </div>
+
+          <div class="feature">
+            <div class="featureTop">
+              <div class="iconBox" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7h16" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M4 12h10" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M4 17h16" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Tournaments & Events</h3>
+            </div>
+            <p>Sponsorships, event supply, and on-ground collaborations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="sectionHead">
+          <div class="kicker"><span class="pill">Contact</span> reach out</div>
+          <h2>Want to partner with us or request a custom bat?</h2>
+          <p class="lead">Use the details below. Replace these placeholders with your actual contact info.</p>
+          <div class="sectionAccent" aria-hidden="true"></div>
+        </div>
+
+        <div class="card" style="padding: 18px;">
+          <div class="twoCol">
+            <div class="block">
+              <h3>Partnerships</h3>
+              <ul class="bullets" aria-label="Partnership notes">
+                <li>
+                  <div class="iconBox" aria-hidden="true" style="width:34px;height:34px;border-radius:12px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M8 12l2 2c1.2 1.2 3.1 1.2 4.2 0l5.8-5.8" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+                      <path d="M3 12l5-5 4 4" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <b>Simple onboarding</b>
+                    <span>Clear collaboration terms and quick coordination.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBox" aria-hidden="true" style="width:34px;height:34px;border-radius:12px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 16l6-6 4 4 6-6" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M20 20H4" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <b>Growth-focused</b>
+                    <span>We want to grow TT equipment access across India.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h3>Contact details (edit me)</h3>
+
+              <!-- EDIT THESE PLACEHOLDERS -->
+              <div class="contactItem">
+                <div class="iconBox" aria-hidden="true" style="width:38px;height:38px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 6h16v12H4V6Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                    <path d="M4 7l8 6 8-6" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+                  </svg>
+                </div>
+                <div>
+                  <div><b>Email:</b> <a href="mailto:skilldives@gmail.com">skilldives@gmail.com</a></div>
+                  <div class="meta">Partnerships, bulk orders, custom builds.</div>
+                </div>
+              </div>
+
+              <div class="contactItem">
+                <div class="iconBox" aria-hidden="true" style="width:38px;height:38px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 8c0 7 5 12 12 12l2-2-4-4-2 2c-3-1-5-3-6-6l2-2-4-4-2 2Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <div><b>Phone:</b> <a href="tel:+918116376484">+91 81163 76484</a></div>
+                  <div class="meta">Business hours support.</div>
+                </div>
+              </div>
+
+              <div class="contactItem">
+                <div class="iconBox" aria-hidden="true" style="width:38px;height:38px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M16 4H8a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                    <path d="M8 12h8" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <div><b>WhatsApp:</b> <a href="https://wa.me/918116376484" target="_blank" rel="noreferrer">Chat on WhatsApp</a></div>
+                  <div class="meta">Quick queries & custom bat requests.</div>
+                </div>
+              </div>
+
+              <div class="contactItem">
+                <div class="iconBox" aria-hidden="true" style="width:38px;height:38px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10Z" stroke="rgba(255,255,255,.85)" stroke-width="1.6"/>
+                    <path d="M12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="rgba(255,255,255,.45)"/>
+                  </svg>
+                </div>
+                <div>
+                  <div><b>Location:</b> India (Bangalore, Karnataka)</div>
+                  <div class="meta">B Jayramaiah Compound, 560066</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      ©️ <span id="year"></span> SkillDives • India’s trusted sports item selling e‑commerce site • All rights reserved
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div>
+      <strong id="toastTitle">Done!</strong>
+      <span id="toastMsg">We’ll email you when we launch.</span>
     </div>
-    <!-- Video Modal End -->
+    <button class="x" onclick="hideToast()" aria-label="Close notification">×</button>
+  </div>
 
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <!-- About Start -->
-    <div class="container-xxl py-6" id="about">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">4</h1>
-                            <h5 class="mb-0">Years</h5>
-                        </div>
-                        <h3 class="lh-base mb-0">of working experience as a web & app developer</h3>
-                    </div>
-                    <p class="mb-4">Experienced Web and App developer dedicated to crafting innovative digital solutions. Expertise in various programming languages and frameworks. Passionate about creating user-friendly experiences that make a lasting impact. Let's bring your ideas to life!</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Product</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-1.jpg" alt="">
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-2.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Happy Clients</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">5</h2>
-                    </div>
-                    <p class="mb-4">Satisfied clients have praised my ability to understand their unique needs, deliver exceptional results, and provide ongoing support, resulting in long-term partnerships and successful collaborations.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">10</h2>
-                    </div>
-                    <p class="mb-0">Successfully delivered a wide range of web and app development projects, exceeding client expectations with innovative solutions and seamless user experiences.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
+    // Smooth scroll for on-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+        // close mobile nav if open
+        const nav = document.getElementById('navLinks');
+        const btn = document.getElementById('menuBtn');
+        if (nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
 
-    <!-- Expertise Start -->
-    <div class="container-xxl py-6 pb-5" id="skill">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Skills & Experience</h1>
-                    <p class="mb-4">Extensive expertise in front-end and back-end development, proficiency in programming languages, frameworks, and a strong focus on user experience design, ensuring high-quality and engaging digital solutions.</p>
-                    <h3 class="mb-4">My Skills</h3>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Java</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Flutter</h6>
-                                    <h6 class="font-weight-bold">80%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">CSS</h6>
-                                    <h6 class="font-weight-bold">65%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Javascript</h6>
-                                    <h6 class="font-weight-bold">70%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Spring Boot</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Devops</h6>
-                                    <h6 class="font-weight-bold">70%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Angular</h6>
-                                    <h6 class="font-weight-bold">80%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">HTML</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
-                        </li>
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>Java Back-End Developer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2021 - 2023</p>
-                                    <h6 class="mb-0">Oracle Cerner</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Java Angular Developer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2020 - 2021</p>
-                                    <h6 class="mb-0">Cognizant</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Java Full Stack Developer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2019 - 2019</p>
-                                    <h6 class="mb-0">Cognizant</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>Computer Science Engineering</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2015 - 2019</p>
-                                    <h6 class="mb-0">Future Institute Of Engineering & Management</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Higher Secondary(Science)</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2015 - 2015</p>
-                                    <h6 class="mb-0">Jawahar Navodaya Vidyalaya</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Secondary</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2013 - 2013</p>
-                                    <h6 class="mb-0">Jawahar Navodaya Vidyalaya</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Expertise End -->
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
 
+    // Toast helpers
+    function showToast(title, msg){
+      const t = document.getElementById('toast');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(hideToast, 4200);
+    }
+    function hideToast(){
+      document.getElementById('toast').classList.remove('show');
+    }
 
-    <!-- Service Start -->
-    <div class="container-fluid bg-light my-5 py-6" id="service">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Services</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Hire Me</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-crop-alt fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Web Development</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6>
-                            <span>Expert Java and Angular web development services delivering robust, scalable solutions. We build dynamic, responsive websites with seamless integration and exceptional user experiences.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code-branch fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">App Development</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$250</span></h6>
-                            <span>Cutting-edge Flutter app development services crafting cross-platform solutions. We create visually stunning, feature-rich mobile applications for enhanced user engagement and business growth.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">DevOps Service</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$250</span></h6>
-                            <span>Comprehensive DevOps services leveraging Docker, Kubernetes, and other cutting-edge tools. We streamline your development, deployment, and scaling processes for efficient and agile software delivery.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Consultancy</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$100</span></h6>
-                            <span>Comprehensive consultancy services covering web, app, DevOps, security, and more. Our experienced consultants offer strategic guidance and solutions to enhance your digital presence and safeguard your infrastructure.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
+    // Demo form submit (no backend)
+    async function handleNotify(event){
+      event.preventDefault();
+      const btn = event.target.querySelector('button[type="submit"]');
+      const emailEl = document.getElementById('email');
+      const email = emailEl.value.trim();
+      if(!email || !email.includes('@')){
+        showToast('Oops!', 'Please enter a valid email address.');
+        return false;
+      }
 
+      // Disable button while submitting
+      if(btn) btn.disabled = true;
 
-    <!-- Projects Start -->
-    <div class="container-xxl py-6 pt-5" id="project">
-        <div class="container">
-            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Projects</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Projects</li>
-                        <li class="mx-3" data-filter=".first">Mobile Application</li>
-                        <!-- <li class="mx-3" data-filter=".second">Graphic Design</li> -->
-                    </ul>
-                </div>
-            </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/money_manage_feature_graphic.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/money_manage_feature_graphic.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="https://play.google.com/store/apps/details?id=in.skilldives.money_management"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/My_notes_feature_graphic.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/My_notes_feature_graphic.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="https://play.google.com/store/apps/details?id=in.skilldives.mynotes"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Projects End -->
+      const url = 'https://app.formbricks.com/s/cmjac5f564qmrad011ma9239u';
+      try {
+        // Primary: JSON POST (preferred)
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
 
+        if (res.ok) {
+          emailEl.value = '';
+          showToast('You’re on the list ✅', 'We’ll email you when we launch.');
+        } else {
+          // If server returns non-2xx, try fallback (no-cors form submit)
+          const fd = new FormData();
+          fd.append('email', email);
+          await fetch(url, { method: 'POST', body: fd, mode: 'no-cors' });
+          emailEl.value = '';
+          showToast('You’re on the list ✅', 'We’ll email you when we launch.');
+        }
+      } catch (err) {
+        // Network / CORS error: fallback to no-cors FormData POST (best-effort)
+        try {
+          const fd = new FormData();
+          fd.append('email', email);
+          await fetch(url, { method: 'POST', body: fd, mode: 'no-cors' });
+          emailEl.value = '';
+          showToast('You’re on the list ✅', 'We’ll email you when we launch.');
+        } catch (err2) {
+          showToast('Network error', 'Unable to submit right now. Try again later.');
+        }
+      } finally {
+        if(btn) btn.disabled = false;
+      }
 
-    <!-- Team Start -->
-<!--     <div class="container-xxl py-6 pb-5" id="team">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Team Members</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="#contact">Contact Us</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-shouvik.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Shouvik Pradhan</h5>
-                                <span>Co-Founder & CEO</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-sunanda.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Sunanda Maity</h5>
-                                <span>Co-Founder & Manager</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    <!-- <div class="container-fluid bg-light py-5 my-5" id="testimonial">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Testimonial</h1>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="testimonial-left h-100">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-1.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-2.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-3.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="testimonial-right h-100">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Testimonial End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-xxl pb-5" id="contact">
-        <div class="container py-5">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Let's Work Together</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Say Hello</a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-2">My office:</p>
-                    <h3 class="fw-bold">Haldia, West Bengal, India</h3>
-                    <hr class="w-100">
-                    <p class="mb-2">Call me:</p>
-                    <h3 class="fw-bold">+91 8116376484</h3>
-                    <hr class="w-100">
-                    <p class="mb-2">Mail me:</p>
-                    <h3 class="fw-bold">skilldives@gmail.com</h3>
-                    <hr class="w-100">
-                    <p class="mb-2">Follow me:</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-primary me-2" href="https://twitter.com/SkillDives"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/profile.php?id=100090300838001"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.youtube.com/channel/UCBr_O-JeDwth4vwRDTO_F_Q"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/shouvik-pradhan-b3b643131/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Map Start -->
-    <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container-xxl pt-5 px-0">
-            <div class="bg-dark">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d859.0672513622657!2d87.99794626956248!3d22.120064998738567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDA3JzEyLjIiTiA4N8KwNTknNTQuOSJF!5e1!3m2!1sen!2sin!4v1686310157428!5m2!1sen!2sin" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
-    <!-- Map End -->
-
-
-    <!-- Copyright Start -->
-    <div class="container-fluid bg-dark text-white py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom text-secondary" href="#">skilldives</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom text-secondary" href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+      return false;
+    }
+  </script>
 </body>
-
 </html>
